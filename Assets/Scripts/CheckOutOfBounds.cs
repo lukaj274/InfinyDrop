@@ -31,7 +31,7 @@ public class CheckOutOfBounds : MonoBehaviour
 
         if (gameObject.CompareTag("Spike") && transform.position.y > player.transform.position.y)
         {
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 }
