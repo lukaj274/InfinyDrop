@@ -14,8 +14,8 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 # Unity directories
-/Library
-/Logs
-/obj
-/Packages
-/Temp
+/Library/
+/Logs/
+/obj/
+/Packages/
+/Temp/
