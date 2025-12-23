@@ -1,10 +1,10 @@
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public float jumpForce;
     public float horizontalAxis;
     
     private Rigidbody2D rb;
@@ -13,11 +13,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
-        if (jumpForce <= 0)
-        {
-            jumpForce = 1;
-        }
     }
 
     // Update is called once per frame
@@ -32,12 +27,17 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        throw new NotImplementedException();
+        Debug.Log("Something collided with the Player!");
+        if (other.gameObject.CompareTag("Spike"))
+        {
+            Debug.Log("Game will restart");
+            SceneManager.LoadScene("Main");
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        throw new NotImplementedException();
+        // Once clouds are added, this method will be used for them
     }
 
     public void OnMove(AxisEventData eventData)

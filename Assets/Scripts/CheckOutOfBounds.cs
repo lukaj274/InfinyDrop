@@ -3,11 +3,12 @@ using UnityEngine;
 public class CheckOutOfBounds : MonoBehaviour
 {
     public float xRange;
-    public GameObject player;
+    private GameObject _player;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _player = GameObject.FindGameObjectWithTag("Player");
         if (xRange == 0)
         {
             xRange = 10;
@@ -29,9 +30,10 @@ public class CheckOutOfBounds : MonoBehaviour
             }
         }
 
-        if (gameObject.CompareTag("Spike") && transform.position.y > player.transform.position.y)
+        if (gameObject.CompareTag("Spike") && transform.position.y > _player.transform.position.y + 5)
         {
-            Destroy(transform.parent.gameObject);
+            Debug.Log("This object should be destroyed");
+            Destroy(gameObject);
         }
     }
 }
