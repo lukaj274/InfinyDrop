@@ -1,14 +1,13 @@
 using UnityEngine;
 
-public class SpikeController : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {
-    private GameObject _player;
+    public static int Score;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _player = GameObject.FindWithTag("Player");
-        transform.position = new Vector3(Random.Range(-10, 10), _player.transform.position.y - 30, -1);
+        Score = 0;
     }
 
     // Update is called once per frame

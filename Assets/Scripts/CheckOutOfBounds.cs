@@ -3,6 +3,7 @@ using UnityEngine;
 public class CheckOutOfBounds : MonoBehaviour
 {
     public float xRange;
+    
     private GameObject _player;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,6 +34,8 @@ public class CheckOutOfBounds : MonoBehaviour
         if (gameObject.CompareTag("Spike") && transform.position.y > _player.transform.position.y + 5)
         {
             Debug.Log("This object should be destroyed");
+            ScoreManager.Score++;
+            Debug.Log(ScoreManager.Score);
             Destroy(gameObject);
         }
     }

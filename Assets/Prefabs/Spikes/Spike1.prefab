@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CheckOutOfBounds
   xRange: 0
-  player: {fileID: 5275649276569288839, guid: f32aa3dff822f4940bc6f5819251d45e, type: 3}
+  startPos: {x: 0, y: 10, z: -1}
 --- !u!114 &4833099926578371577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,4 +226,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc21ca22bd81ee49ad7be7810c8fe44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpikeController
-  player: {fileID: 5275649276569288839, guid: f32aa3dff822f4940bc6f5819251d45e, type: 3}

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public float horizontalAxis;
+    public int fallSpeed;
     
     private Rigidbody2D rb;
     
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate(Vector2.right * horizontalAxis / 10);
         }
+        transform.Translate(Vector3.down * fallSpeed * Time.deltaTime);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
