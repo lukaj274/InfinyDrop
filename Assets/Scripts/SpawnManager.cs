@@ -23,11 +23,7 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnSpikes()
     {
-        int numberTimes = Random.Range(1, 5);
-        Debug.Log($"Spawning {numberTimes} spike(s)");
-        for (int i = 0; i < numberTimes; i++)
-        {
-            Instantiate(spikes[0]);
-        }
+        Debug.Log($"Spawning 1 spike");
+        Instantiate(spikes[0]);
     }
 }

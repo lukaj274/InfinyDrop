@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class CheckOutOfBounds : MonoBehaviour
@@ -5,6 +7,7 @@ public class CheckOutOfBounds : MonoBehaviour
     public float xRange;
     
     private GameObject _player;
+    private List<GameObject> _spikes;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,6 +17,8 @@ public class CheckOutOfBounds : MonoBehaviour
         {
             xRange = 10;
         }
+
+        _spikes = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -31,9 +36,10 @@ public class CheckOutOfBounds : MonoBehaviour
             }
         }
 
-        if (gameObject.CompareTag("Spike") && transform.position.y > _player.transform.position.y + 5)
+        if (gameObject.CompareTag("SpikeSet") && transform.position.y > _player.transform.position.y + 5)
         {
             Debug.Log("This object should be destroyed");
+            //
             ScoreManager.Score++;
             Debug.Log(ScoreManager.Score);
             Destroy(gameObject);

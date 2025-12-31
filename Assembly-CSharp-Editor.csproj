@@ -896,9 +896,6 @@
     <Reference Include="Unity.2D.Common.Path.Editor">
       <HintPath>C:\Users\jluka\Coding\Unity\InfinyDrop\Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityWakatime">
-      <HintPath>C:\Users\jluka\Coding\Unity\InfinyDrop\Library\ScriptAssemblies\UnityWakatime.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>C:\Users\jluka\Coding\Unity\InfinyDrop\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
@@ -1120,6 +1117,10 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{e7f6f701-1f00-9c5e-1d6c-2b3f3450a84d}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityWakatime.csproj">
+      <Project>{f0c73b60-a1c8-8bbc-c5fa-7262a1f6f4dd}</Project>
+      <Name>UnityWakatime</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

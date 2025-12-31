@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -7,13 +8,16 @@ public class PlayerController : MonoBehaviour
 {
     public float horizontalAxis;
     public int fallSpeed;
+    public ParticleSystem particle;
     
-    private Rigidbody2D rb;
+    private Rigidbody2D _rb;
+    private AudioSource _audio;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
+        _audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,7 +37,19 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Spike"))
         {
             Debug.Log("Game will restart");
-            SceneManager.LoadScene("Main");
+            
+            Destroy(other.transform.parent.gameObject);
+            
+            particle.Play();
+            _audio.Play();
+            
+            StartCoroutine(WaitAndChangeScene(1.5f));
+        }
+
+        else if (other.gameObject.CompareTag("SpikeSet"))
+        {
+            // Destroy the spike set, calling its OnDestroy event handler
+            Destroy(other.gameObject);
         }
     }
 
@@ -46,15 +62,33 @@ public class PlayerController : MonoBehaviour
     {
         if (eventData.moveVector.x > 0)
         {
-            rb.AddForce(Vector2.right * 10);
+            _rb.AddForce(Vector2.right * 10);
             Debug.Log("Moving right");
         }
         if (eventData.moveVector.x < 0)
         {
-            rb.AddForce(Vector2.left * 10);
+            _rb.AddForce(Vector2.left * 10);
             Debug.Log("Moving left");
         }
     }
-    
-    
+
+    IEnumerator WaitAndChangeScene(float seconds)
+    {
+        // Destroy the sprite renderer
+        Destroy(GetComponent<SpriteRenderer>());
+        
+        // Stop the player from still falling
+        StopFalling();
+        
+        // Wait 1 second
+        yield return new WaitForSeconds(seconds);
+        
+        // Reload the scene
+        SceneManager.LoadScene("Main 1");
+    }
+
+    public void StopFalling()
+    {
+        fallSpeed = 0;
+    }
 }
