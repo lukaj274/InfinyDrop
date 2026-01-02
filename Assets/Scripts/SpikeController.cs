@@ -16,15 +16,10 @@ public class SpikeController : MonoBehaviour
     {
         _player = GameObject.FindWithTag("Player");
         _spikes = new List<GameObject>();
-        _randomMax = 8;
+        _randomMax = 5;
         transform.position = new Vector3(0, _player.transform.position.y - 30, -1);
         
-        // Choose a number of spikes and spawn them at a random x-axis within the range
-        int numberToSpawn = Random.Range(3, _randomMax);
-        for (int i = 0; i < numberToSpawn; i++)
-        {
-            _spikes.Add(Instantiate(spike, new Vector3(Random.Range(-10, 10), transform.position.y + 5, -1), transform.rotation, transform));
-        }
+        SpawnSpikes();
     }
 
     // Update is called once per frame
@@ -50,5 +45,15 @@ public class SpikeController : MonoBehaviour
 
         ScoreManager.Score++;
         Destroy(gameObject);
+    }
+
+    void SpawnSpikes()
+    {
+        // Choose a number of spikes and spawn them at a random x-axis within the range
+        int numberToSpawn = Random.Range(3, _randomMax);
+        for (int i = 0; i < numberToSpawn; i++)
+        {
+            _spikes.Add(Instantiate(spike, new Vector3(Random.Range(-10, 10), transform.position.y + 5, -1), transform.rotation, transform));
+        }
     }
 }

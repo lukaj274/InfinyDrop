@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public int fallSpeed;
     public ParticleSystem particle;
     public GameObject character;
+    public AudioSource music;
     
     private Rigidbody2D _rb;
     private AudioSource _audio;
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour
             Destroy(character);
             
             // Play audio and visual effects
+            music.Stop();
             particle.Play();
             _audio.Play();
             

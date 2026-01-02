@@ -12,7 +12,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InvokeRepeating("SpawnSpikes", 1, 1);
+        InvokeRepeating(nameof(SpawnSpikeSet), 1, 1);
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class SpawnManager : MonoBehaviour
         
     }
 
-    void SpawnSpikes()
+    void SpawnSpikeSet()
     {
         Debug.Log($"Spawning 1 spike");
         
