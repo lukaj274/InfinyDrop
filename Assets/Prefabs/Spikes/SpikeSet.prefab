@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc21ca22bd81ee49ad7be7810c8fe44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpikeController
-  spike: {fileID: 2071597543800497958, guid: f291a222ce149674c977b5d36aec515b, type: 3}
+  spike: {fileID: 8263560130331315326, guid: 8de8ceead497241adbd1c8ea3c2f50d1, type: 3}
 --- !u!61 &4097292000390484198
 BoxCollider2D:
   m_ObjectHideFlags: 0
