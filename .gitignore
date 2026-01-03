@@ -20,3 +20,5 @@ obj/
 Packages/
 Temp/
 .idea/
+# Build directory
+Publish/

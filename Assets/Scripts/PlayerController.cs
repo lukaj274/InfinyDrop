@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _audio = GetComponent<AudioSource>();
         _animator = character.GetComponent<Animator>();
-        _animator.Play("Land");
+        //_animator.Play("Movement");
     }
 
     // Update is called once per frame
@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         
         // Reload the scene
-        SceneManager.LoadScene("3D-Main-PC");
+        SceneManager.LoadScene(0);
     }
 
     public void StopFalling()
