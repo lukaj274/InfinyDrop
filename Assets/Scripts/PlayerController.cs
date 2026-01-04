@@ -6,12 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    // Public members
     public float horizontalAxis;
     public int fallSpeed;
     public ParticleSystem particle;
     public GameObject character;
     public AudioSource music;
     
+    // Private members
+    private int _pointsMultiplier;
     private Rigidbody2D _rb;
     private AudioSource _audio;
     private Animator _animator;
@@ -28,6 +31,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Movement
         horizontalAxis = Input.GetAxis("Horizontal");
         if (horizontalAxis != 0)
         {
@@ -39,6 +43,8 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         Debug.Log("Something collided with the Player!");
+        
+        // If Player collides with Spike, end game
         if (other.gameObject.CompareTag("Spike"))
         {
             // Print message to console
@@ -57,6 +63,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(WaitAndChangeScene(1.5f));
         }
 
+        // If player collides with a SpikeSet, then destroy the set
         else if (other.gameObject.CompareTag("SpikeSet"))
         {
             // Destroy the spike set, calling its OnDestroy event handler

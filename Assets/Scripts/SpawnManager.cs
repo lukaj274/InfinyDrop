@@ -15,12 +15,6 @@ public class SpawnManager : MonoBehaviour
         InvokeRepeating(nameof(SpawnSpikeSet), 0, 1);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void SpawnSpikeSet()
     {
         Debug.Log($"Spawning 1 spike");

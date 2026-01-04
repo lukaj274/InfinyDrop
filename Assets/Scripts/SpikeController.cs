@@ -35,7 +35,7 @@ public class SpikeController : MonoBehaviour
     {
         DestroyAllSpikes();
     }
-
+    
     public void DestroyAllSpikes()
     {
         foreach (var thisSpike in _spikes)
@@ -46,7 +46,7 @@ public class SpikeController : MonoBehaviour
         ScoreManager.Score++;
         Destroy(gameObject);
     }
-
+    
     void SpawnSpikes()
     {
         // Choose a number of spikes and spawn them at a random x-axis within the range

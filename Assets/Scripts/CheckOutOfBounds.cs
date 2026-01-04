@@ -24,6 +24,7 @@ public class CheckOutOfBounds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // If this script is being used on a Player, then keep the Player within the xRange
         if (gameObject.CompareTag("Player"))
         {
             if (transform.position.x > xRange)
@@ -36,11 +37,10 @@ public class CheckOutOfBounds : MonoBehaviour
             }
         }
 
+        // If this script is being used on a SpikeSet, then destroy the SpikeSet once it's out of bounds
         if (gameObject.CompareTag("SpikeSet") && transform.position.y > _player.transform.position.y + 5)
         {
             Debug.Log("This object should be destroyed");
-            //
-            ScoreManager.Score++;
             Debug.Log(ScoreManager.Score);
             Destroy(gameObject);
         }
