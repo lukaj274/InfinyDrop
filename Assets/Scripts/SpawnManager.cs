@@ -12,7 +12,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InvokeRepeating(nameof(SpawnSpikeSet), 0, 1);
+        InvokeRepeating(nameof(SpawnSpikeSet), 0, 1.25f);
     }
 
     void SpawnSpikeSet()
