@@ -76,6 +76,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\Fast_Mobile_Star\Doumentation\TXTInstruction.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Customizable Skybox\Stylized Sky\Shaders\Stylized Sky.shader" />
@@ -861,6 +862,9 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.3.0f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualEffectGraph.Editor">
+      <HintPath>C:\Users\jluka\Coding\Unity\InfinyDrop\Library\ScriptAssemblies\Unity.VisualEffectGraph.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
       <HintPath>C:\Users\jluka\Coding\Unity\InfinyDrop\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
@@ -1043,6 +1047,9 @@
     </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>C:\Users\jluka\Coding\Unity\InfinyDrop\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualEffectGraph.Runtime">
+      <HintPath>C:\Users\jluka\Coding\Unity\InfinyDrop\Library\ScriptAssemblies\Unity.VisualEffectGraph.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
       <HintPath>C:\Users\jluka\Coding\Unity\InfinyDrop\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
