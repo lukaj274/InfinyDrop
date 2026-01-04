@@ -9,5 +9,5 @@ Yes, InfinyDrop is open source and licensed under the 3-Clause BSD License.
 The first releases of InfinyDrop are expected to come out in a few weeks.
 
 ## What platforms will I be able to play InfinyDrop on?
-The first releases will be available on Linux, Windows, and macOS, as well as online on Unity Play.
-In the future I might add a mobile version for iOS and Android.
+Currently the beta version of InfinyDrop is only available on its website, https://lukaj274.github.io/InfinyDrop/.
+However, I am planning to publish to desktop platforms (Linux, macOS, Windows) very soon and Android in the near future.
