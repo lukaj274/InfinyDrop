@@ -54,6 +54,7 @@ MonoBehaviour:
   fallSpeed: 10
   particle: {fileID: 2627777597176340038}
   character: {fileID: 8077976882165588223}
+  music: {fileID: 0}
 --- !u!114 &1112505811520855206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,7 +211,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 4.218273, z: 2.1964781}
+  m_Size: {x: 0.52, y: 4.218273, z: 2.1964781}
   m_Center: {x: 0, y: 1.6091366, z: 0.5982393}
 --- !u!1001 &2430697710160219317
 PrefabInstance:
