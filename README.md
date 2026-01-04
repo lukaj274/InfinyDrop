@@ -6,7 +6,7 @@ InfinyDrop is a multiplatform single player game in which the player is falling 
 Yes, InfinyDrop is open source and licensed under the 3-Clause BSD License.
 
 ## When will InfinyDrop be made available?
-The first releases of InfinyDrop are expected to come out in a few weeks.
+The web version is available, and more releases will follow.
 
 ## What platforms will I be able to play InfinyDrop on?
 Currently the beta version of InfinyDrop is only available on its website, https://lukaj274.github.io/InfinyDrop/.
