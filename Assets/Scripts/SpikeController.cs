@@ -17,7 +17,7 @@ public class SpikeController : MonoBehaviour
         _player = GameObject.FindWithTag("Player");
         _spikes = new List<GameObject>();
         _randomMax = 5;
-        transform.position = new Vector3(0, _player.transform.position.y - 30, -1);
+        transform.position = new Vector3(0, _player.transform.position.y - 50, -1);
         
         SpawnSpikes();
     }

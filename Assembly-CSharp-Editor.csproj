@@ -1076,11 +1076,11 @@
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>C:\Users\jluka\Coding\Unity\InfinyDrop\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Mathematics">
-      <HintPath>C:\Users\jluka\Coding\Unity\InfinyDrop\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualEffectGraph.Runtime">
       <HintPath>C:\Users\jluka\Coding\Unity\InfinyDrop\Library\ScriptAssemblies\Unity.VisualEffectGraph.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>C:\Users\jluka\Coding\Unity\InfinyDrop\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
       <HintPath>C:\Users\jluka\Coding\Unity\InfinyDrop\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>

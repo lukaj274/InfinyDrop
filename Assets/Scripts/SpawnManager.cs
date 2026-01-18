@@ -19,9 +19,13 @@ public class SpawnManager : MonoBehaviour
     {
         Debug.Log($"Spawning 1 spike");
         
-        Quaternion quaternion = new Quaternion();
-        quaternion.eulerAngles = new Vector3(90, 0, 0);
+        var spawnPos = new Vector3(transform.position.x, spikes[0].transform.position.y, transform.position.z);
         
-        Instantiate(spikes[0], transform.position, quaternion);
+        var spawnRot = new Quaternion
+        {
+            eulerAngles = new Vector3(90, 0, 0)
+        };
+        
+        Instantiate(spikes[0], spawnPos, spawnRot);
     }
 }
