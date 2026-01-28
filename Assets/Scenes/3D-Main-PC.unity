@@ -424,6 +424,10 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1976268463}
+    - target: {fileID: 4320863480043695766, guid: bb12f6b122a1c0549ad6ad934cb47c82, type: 3}
+      propertyPath: scoreMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

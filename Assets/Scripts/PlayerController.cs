@@ -14,10 +14,11 @@ public class PlayerController : MonoBehaviour
     public AudioSource music;
     
     // Private members
-    private int _pointsMultiplier;
     private Rigidbody2D _rb;
     private AudioSource _audio;
     private Animator _animator;
+    private bool _isPaused;
+    private int _defaultFallSpeed;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
         _audio = GetComponent<AudioSource>();
         _animator = character.GetComponent<Animator>();
         //_animator.Play("Movement");
+        _defaultFallSpeed = fallSpeed;
     }
 
     // Update is called once per frame
@@ -38,6 +40,19 @@ public class PlayerController : MonoBehaviour
             transform.Translate(Vector2.right * horizontalAxis / 10);
         }
         transform.Translate(Vector3.down * fallSpeed * Time.deltaTime);
+        
+        // Check for pause key (Escape)
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+            }
+            else
+            {
+                Time.timeScale = 0;
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision other)
