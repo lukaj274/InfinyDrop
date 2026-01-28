@@ -43,7 +43,7 @@ public class SpikeController : MonoBehaviour
             Destroy(thisSpike);
         }
 
-        ScoreManager.Score++;
+        ScoreManager.Score += ScoreManager.ScoreMultiplier;
         Destroy(gameObject);
     }
     
