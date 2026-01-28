@@ -44,14 +44,19 @@ public class PlayerController : MonoBehaviour
         // Check for pause key (Escape)
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Time.timeScale == 0)
-            {
-                Time.timeScale = 1;
-            }
-            else
-            {
-                Time.timeScale = 0;
-            }
+            PauseOrStartGame();
+        }
+    }
+
+    public static void PauseOrStartGame()
+    {
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+        else
+        {
+            Time.timeScale = 0;
         }
     }
 
