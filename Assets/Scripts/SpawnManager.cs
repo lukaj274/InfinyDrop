@@ -4,6 +4,8 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     private int _spawnTime;
+
+    public static float SpawnRate;
     
     public List<GameObject> spikes;
     public List<GameObject> clouds; // To be added later
@@ -12,7 +14,15 @@ public class SpawnManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InvokeRepeating(nameof(SpawnSpikeSet), 0, 1.25f);
+        SpawnRate = 1.25f;
+
+        // Half the SpawnRate if the game is in Hard Mode
+        if (ScoreManager.ScoreMultiplier == 2)
+        {
+            SpawnRate /= 2;
+        }
+        
+        InvokeRepeating(nameof(SpawnSpikeSet), 0, SpawnRate);
     }
 
     void SpawnSpikeSet()

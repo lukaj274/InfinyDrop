@@ -16,7 +16,6 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         Score = 0;
-        ScoreMultiplier = scoreMultiplier;
         _player = GameObject.Find("Player");
         var controller = _player.GetComponent<PlayerController>();
 
