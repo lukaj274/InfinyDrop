@@ -54,3 +54,6 @@ InfinyDrop is available on its website, https://lukaj274.github.io/InfinyDrop/.
 #### C# / .NET
 - https://dotnet.microsoft.com/en-us/
 - Open-Source - MIT License
+
+### AI usage:
+The player input was made with AI (Github Copilot)
