@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour
     private Animator _animator;
     private bool _isPaused;
     private int _defaultFallSpeed;
+    private Vector3 _screenPoint;
+    private Vector3 _offset;
+    private bool _wasMouseDown = false;
+    private float _xRange = 10f;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,18 +32,53 @@ public class PlayerController : MonoBehaviour
         _animator = character.GetComponent<Animator>();
         //_animator.Play("Movement");
         _defaultFallSpeed = fallSpeed;
+        
+        // Get the xRange from CheckOutOfBounds script
+        CheckOutOfBounds checkBounds = GetComponent<CheckOutOfBounds>();
+        if (checkBounds != null)
+        {
+            _xRange = checkBounds.xRange;
+        }
     }
-
     // Update is called once per frame
     void Update()
     {
-        // Movement
-        horizontalAxis = Input.GetAxis("Horizontal");
-        if (horizontalAxis != 0)
+        // Handle mouse input anywhere on screen
+        if (Input.GetMouseButton(0))
         {
-            transform.Translate(Vector2.right * horizontalAxis / 10);
+            // Calculate offset on first mouse click
+            if (!_wasMouseDown)
+            {
+                _screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+                _offset = transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _screenPoint.z));
+                _wasMouseDown = true;
+            }
+            
+            // Get the Z distance from camera to player
+            Vector3 cursorScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, _screenPoint.z);
+            Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(cursorScreenPoint) + _offset;
+            
+            // Clamp the x position to stay within boundaries
+            float clampedX = Mathf.Clamp(cursorPosition.x, -_xRange, _xRange);
+            
+            // Move player to follow mouse horizontally (with offset) while falling
+            transform.position = new Vector3(clampedX, transform.position.y - fallSpeed * Time.deltaTime, transform.position.z);
         }
-        transform.Translate(Vector3.down * fallSpeed * Time.deltaTime);
+        else
+        {
+            // Reset mouse down flag when mouse is released
+            _wasMouseDown = false;
+            
+            // Normal movement with arrow keys or WASD when not dragging
+            horizontalAxis = Input.GetAxis("Horizontal");
+            if (horizontalAxis != 0)
+            {
+                transform.Translate(Vector2.right * horizontalAxis / 10);
+            }
+            
+            // Apply falling
+            transform.Translate(Vector3.down * fallSpeed * Time.deltaTime);
+        }
         
         // Check for pause key (Escape)
         if (Input.GetKeyDown(KeyCode.Escape))

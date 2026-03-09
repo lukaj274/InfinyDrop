@@ -16,7 +16,7 @@ public class SpawnManager : MonoBehaviour
     {
         SpawnRate = 1.25f;
 
-        // Half the SpawnRate if the game is in Hard Mode
+        // Quarter the SpawnRate if the game is in Hard Mode
         if (ScoreManager.ScoreMultiplier == 2)
         {
             SpawnRate /= 2;

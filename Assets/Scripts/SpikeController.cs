@@ -49,8 +49,15 @@ public class SpikeController : MonoBehaviour
     
     void SpawnSpikes()
     {
+        int minSpikes = 3;
+
+        if (ScoreManager.ScoreMultiplier == 2)
+        {
+            minSpikes = 5;
+            _randomMax = 8;
+        }
         // Choose a number of spikes and spawn them at a random x-axis within the range
-        int numberToSpawn = Random.Range(3, _randomMax);
+        int numberToSpawn = Random.Range(minSpikes, _randomMax);
         for (int i = 0; i < numberToSpawn; i++)
         {
             _spikes.Add(Instantiate(spike, new Vector3(Random.Range(-10, 10), transform.position.y + 5, -1), transform.rotation, transform));
