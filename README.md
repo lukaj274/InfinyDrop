@@ -10,6 +10,7 @@ InfinyDrop is available on its website, https://lukaj274.github.io/InfinyDrop/.
 
 ## Controls
 - 'A' and 'D' or arrow keys to move left and right
+- Or swiping to the sides on mobile devices
 - 'Escape' or click the pause button to pause
 
 ## Credits:
